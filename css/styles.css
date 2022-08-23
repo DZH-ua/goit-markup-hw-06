@@ -439,7 +439,7 @@ margin-right: 10px;
 }
 
 .footer-mailing {
-    margin-left: 93px;
+    margin-left: auto;
 }
 
 /* Join form */
@@ -643,8 +643,7 @@ transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
-    width: 528px;
-    height: 581px;
+    width: 528px;    
     position: absolute;
     top: 50%;
     left: 50%;
@@ -673,7 +672,8 @@ transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
-.button-modal-exit:hover .modal-exit {
+.button-modal-exit:hover .modal-exit,
+.button-modal-exit:focus .modal-exit {
     fill: var(--hover-color);
 }
 
@@ -737,7 +737,7 @@ transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .contract,
 .contract-open {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.01em;
     color: var(--text-color);
@@ -782,8 +782,8 @@ transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 }
 
-.input-wrapper:hover,
-.input-wrapper:focus {
+.contact-form-input:hover + .icon-input,
+.contact-form-input:focus-within + .icon-input {
     fill: var(--hover-color);
 }
 
@@ -799,10 +799,14 @@ transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.contract-agree:focus + .contract::before {
+    outline: 1px solid var(--main-color);
+}
+
 .contract-agree:checked + .contract::before {
     background-image: url(../images/agree.svg);
     background-color: var(--hover-color);
-    background-position: 50% 50%;
+    background-position: 50% 50%;    
 }
 
 .contract-agree {
